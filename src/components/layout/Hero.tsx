@@ -3,10 +3,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Bot } from "lucide-react"
-import { AnimatedGridPattern } from "../ui/animated-grid-pattern"
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
-
 
 interface TimeLeft {
   days: number
@@ -16,36 +15,39 @@ interface TimeLeft {
 }
 
 export default function Hero() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 14,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null)
 
   useEffect(() => {
-    // set target date to July 14, 2025 at 7:00 AM (local time)
     const targetDate = new Date('2025-07-14T07:00:00')
-  
-    const timer = setInterval(() => {
+
+    const calculateTimeLeft = (): TimeLeft => {
       const now = new Date().getTime()
       const distance = targetDate.getTime() - now
-  
+
       if (distance > 0) {
-        setTimeLeft({
+        return {
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        })
+        }
       } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-        clearInterval(timer)
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 }
       }
+    }
+
+    setTimeLeft(calculateTimeLeft())
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft())
     }, 1000)
-  
+
     return () => clearInterval(timer)
   }, [])
+
+  if (!timeLeft) {
+    return null
+  }
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
