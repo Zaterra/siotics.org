@@ -18,7 +18,7 @@ export default function Hero() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null)
 
   useEffect(() => {
-    const targetDate = new Date('2025-07-14T07:00:00')
+    const targetDate = new Date('2025-07-18T07:00:00')
 
     const calculateTimeLeft = (): TimeLeft => {
       const now = new Date().getTime()
