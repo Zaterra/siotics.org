@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X, Calendar, ArrowRight } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,13 +22,13 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center space-x-3 bg-transparent">
             <div className="w-16 h-16 rounded-full p-1 overflow-hidden bg-transparent">
-              {/* <Image
-                src="/images/siotics-logo.jpeg"
+              <Image
+                src="/images/siotics-logo.png"
                 alt="SIOTICS Logo"
                 width={64}
                 height={64}
                 className="w-full h-full object-cover"
-              /> */}
+              />
             </div>
           </div>
 
