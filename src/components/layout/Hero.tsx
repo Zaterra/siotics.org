@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Enhanced Animated Grid Background */}
+      {/* Background */}
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.3}
@@ -62,8 +62,6 @@ export default function Hero() {
           "stroke-gray-600/40 fill-gray-600/20",
         )}
       />
-
-      {/* Additional Grid Layer for More Depth */}
       <AnimatedGridPattern
         numSquares={20}
         maxOpacity={0.15}
@@ -76,7 +74,6 @@ export default function Hero() {
           "stroke-gray-500/30 fill-gray-500/10",
         )}
       />
-
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/10 via-transparent to-gray-700/10" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
 
@@ -94,45 +91,41 @@ export default function Hero() {
 
           {/* Main Headline */}
           <div className="space-y-6">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
               Where anyone can{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Build cool stuff
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/75 max-w-2xl mx-auto">
-              {"Be part of State Vocational 1 Jakarta's coolest tech club ⚙️🤖"}
+              Be part of State Vocational 1 Jakarta's coolest tech club ⚙️🤖
             </p>
           </div>
 
           {/* Countdown Timer */}
           <div className="space-y-6">
             <p className="text-gray-400">Registration opens in</p>
-            <div className="flex justify-center gap-4">
-              <Card className="bg-white/10 border-white/30 p-6 w-20 h-20 backdrop-blur-md hover:bg-white/15">
-                <div className="text-center h-full flex flex-col justify-center">
-                  <div className="text-2xl font-bold text-white">{timeLeft.days.toString().padStart(2, "0")}</div>
-                  <div className="text-xs text-gray-400 mt-1">DAYS</div>
-                </div>
-              </Card>
-              <Card className="bg-white/10 border-white/30 p-6 w-20 h-20 backdrop-blur-md hover:bg-white/15">
-                <div className="text-center h-full flex flex-col justify-center">
-                  <div className="text-2xl font-bold text-white">{timeLeft.hours.toString().padStart(2, "0")}</div>
-                  <div className="text-xs text-gray-400 mt-1">HRS</div>
-                </div>
-              </Card>
-              <Card className="bg-white/10 border-white/30 p-6 w-20 h-20 backdrop-blur-md hover:bg-white/15">
-                <div className="text-center h-full flex flex-col justify-center">
-                  <div className="text-2xl font-bold text-white">{timeLeft.minutes.toString().padStart(2, "0")}</div>
-                  <div className="text-xs text-gray-400 mt-1">MIN</div>
-                </div>
-              </Card>
-              <Card className="bg-white/10 border-white/30 p-6 w-20 h-20 backdrop-blur-md hover:bg-white/15">
-                <div className="text-center h-full flex flex-col justify-center">
-                  <div className="text-2xl font-bold text-white">{timeLeft.seconds.toString().padStart(2, "0")}</div>
-                  <div className="text-xs text-gray-400 mt-1">SEC</div>
-                </div>
-              </Card>
+            <div className="flex justify-center flex-wrap gap-4">
+              {[
+                { value: timeLeft.days, label: "DAYS" },
+                { value: timeLeft.hours, label: "HRS" },
+                { value: timeLeft.minutes, label: "MIN" },
+                { value: timeLeft.seconds, label: "SEC" },
+              ].map((item, index) => (
+                <Card
+                  key={index}
+                  className="bg-white/10 border-white/30 p-2 w-18 h-18 sm:h-20 sm:w-20 backdrop-blur-md hover:bg-white/15 transition-all"
+                >
+                  <div className="text-center h-full flex flex-col justify-center">
+                    <div className="sm:text-2xl text-xl font-bold text-white">
+                      {item.value.toString().padStart(2, "0")}
+                    </div>
+                    <div className=" text-xs text-gray-400 mt-1">
+                      {item.label}
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
