@@ -26,8 +26,7 @@ export const FAQsData = [
 export const teamData = [
     {name: "Muhammad Raihan Al Farizy", profilePicturePath: "raihan.webp"},
     {name: "Kim Minji", profilePicturePath: "minji.webp"},
-    {name: "Muhammad Raihan Al Farizy", profilePicturePath: "raihan.webp"},
-    {name: "Kim Minji", profilePicturePath: "minji.webp"},
-    {name: "Muhammad Raihan Al Farizy", profilePicturePath: "raihan.webp"},
-    {name: "Kim Minji", profilePicturePath: "minji.webp"},
+    {name: "Azriel Bagas Laksamono", profilePicturePath: "azriel.webp"},
+    {name: "Nur Aulia Ramadhan", profilePicturePath: "nuraul.webp"},
+    {name: "Kenzie", profilePicturePath: "kenzie.webp"}
 ]
