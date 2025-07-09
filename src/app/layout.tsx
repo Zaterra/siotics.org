@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Siotics",
-  description: "The State Vocational 1 Jakarta's Coolest Tech Club",
+  description: "The State Vocational High School 1 Jakarta's Coolest Tech Club",
 };
 
 export default function RootLayout({

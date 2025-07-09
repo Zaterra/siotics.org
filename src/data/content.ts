@@ -15,8 +15,8 @@ export const ActivitiesData = [
 ]
 
 export const FAQsData = [
-    {question: "Who is allowed to join?", answer: "Siotics is open for all State Vocational 1 Jakarta's students"},
-    {question: "Is this extracurricular only for informatics student?", answer: "No, this extracurricular is open to all students from State Vocational 1 Jakarta's students"},
+    {question: "Who is allowed to join?", answer: "Siotics is open for all State Vocational High School 1 Jakarta's students"},
+    {question: "Is this extracurricular only for informatics student?", answer: "No, this extracurricular is open to all students from State Vocational High School 1 Jakarta's students"},
     {question: "Do i need a laptop to join this extracurricular?", answer: "Having a laptop is helpful, but it's not mandatory. We provide shared devices for practice if needed."},
     {question: "When and where are the meetings held?", answer: "Meetings are held every Tuesday at 3 PM in the Informatics Building, Computer Lab, Room 405. Updates will be shared in our group chat."},
     {question: "Do i need prior knowledge about IoT and Robotics?", answer: "Not at all! We welcome beginners and will guide you from the basics through workshops and projects."},

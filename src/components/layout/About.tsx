@@ -51,7 +51,7 @@ export default function About() {
 
       <div className="m-10">
         <p className="">
-          <span className="font-bold">Siotics</span> (System Internet of Things and Robotics) is an extracurricular club and organization at State Vocational 1 Jakarta, founded in 2021. We are dedicated to fostering innovation and collaboration in the fields of IoT systems and robotics.  
+          <span className="font-bold">Siotics</span> (System Internet of Things and Robotics) is an extracurricular club and organization at State Vocational High School 1 Jakarta, founded in 2021. We are dedicated to fostering innovation and collaboration in the fields of IoT systems and robotics.  
         </p>
       </div>
     </div>

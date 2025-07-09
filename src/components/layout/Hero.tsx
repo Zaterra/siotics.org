@@ -98,7 +98,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/75 max-w-2xl mx-auto">
-              Be part of State Vocational 1 Jakarta{"'"}s coolest tech club ⚙️🤖
+              Be part of State Vocational High School 1 Jakarta{"'"}s coolest tech club ⚙️🤖
             </p>
           </div>
 
