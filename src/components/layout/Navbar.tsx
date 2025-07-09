@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu, X, Calendar, ArrowRight } from "lucide-react"
+import GetNotifiedButton from "../ui/GetNotifiedButton"
+import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -12,7 +13,7 @@ export default function Navigation() {
     { name: "Home", href: "#home" },
     { name: "Activities", href: "#activities" },
     { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "FAQs", href: "#faqs" },
   ]
 
   return (
@@ -23,7 +24,7 @@ export default function Navigation() {
           <div className="flex items-center space-x-3 bg-transparent">
             <div className="w-16 h-16 rounded-full p-1 overflow-hidden bg-transparent">
               <Image
-                src="/images/siotics-logo.png"
+                src="/images/siotics-logo.webp"
                 alt="SIOTICS Logo"
                 width={64}
                 height={64}
@@ -48,16 +49,8 @@ export default function Navigation() {
           </div>
 
           {/* Get Notified Button */}
-          <div className="hidden md:block">
-            <Button
-              size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white group shadow-lg shadow-blue-600/25"
-            >
-              <Calendar className="mr-2 h-4 w-4" />
-              Get Notified
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
+          
+          <GetNotifiedButton className="md:flex hidden"/>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -86,16 +79,7 @@ export default function Navigation() {
                   {item.name}
                 </a>
               ))}
-              <div className="pt-2">
-                <Button
-                  size="sm"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 group"
-                >
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Get Notified
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
+              <GetNotifiedButton className="w-full"></GetNotifiedButton>
             </div>
           </div>
         )}
