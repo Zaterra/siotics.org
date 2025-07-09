@@ -50,7 +50,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white overflow-hidden border-gray-600/20 border-b" id="home">
       {/* Background */}
       <AnimatedGridPattern
         numSquares={30}
@@ -103,31 +103,41 @@ export default function Hero() {
           </div>
 
           {/* Countdown Timer */}
-          <div className="space-y-6">
-            <p className="text-gray-400">Registration opens in</p>
-            <div className="flex justify-center flex-wrap gap-4">
-              {[
-                { value: timeLeft.days, label: "DAYS" },
-                { value: timeLeft.hours, label: "HRS" },
-                { value: timeLeft.minutes, label: "MIN" },
-                { value: timeLeft.seconds, label: "SEC" },
-              ].map((item, index) => (
-                <Card
-                  key={index}
-                  className="bg-white/10 border-white/30 p-2 w-18 h-18 sm:h-20 sm:w-20 backdrop-blur-md hover:bg-white/15 transition-all"
-                >
-                  <div className="text-center h-full flex flex-col justify-center">
-                    <div className="sm:text-2xl text-xl font-bold text-white">
-                      {item.value.toString().padStart(2, "0")}
-                    </div>
-                    <div className=" text-xs text-gray-400 mt-1">
-                      {item.label}
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
+<div className="space-y-6">
+  <p className="text-gray-400">Registration opens in</p>
+  <div
+    className={cn(
+      // default layout for >370px
+      "flex justify-center flex-wrap gap-4",
+      // switch to grid for <370px
+      "max-[370px]:grid max-[370px]:grid-cols-2 max-[370px]:gap-4",
+      // center grid itself
+      "max-[370px]:w-max max-[370px]:mx-auto"
+    )}
+  >
+    {[
+      { value: timeLeft.days, label: "DAYS" },
+      { value: timeLeft.hours, label: "HRS" },
+      { value: timeLeft.minutes, label: "MIN" },
+      { value: timeLeft.seconds, label: "SEC" },
+    ].map((item, index) => (
+      <Card
+        key={index}
+        className="bg-white/10 border-white/30 p-2 w-18 h-18 sm:h-20 sm:w-20 backdrop-blur-md hover:bg-white/15 transition-all"
+      >
+        <div className="text-center h-full flex flex-col justify-center">
+          <div className="sm:text-2xl text-xl font-bold text-white">
+            {item.value.toString().padStart(2, "0")}
           </div>
+          <div className="text-xs text-gray-400 mt-1">
+            {item.label}
+          </div>
+        </div>
+      </Card>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
     </div>
