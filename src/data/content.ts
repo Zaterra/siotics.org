@@ -28,5 +28,6 @@ export const teamData = [
     {name: "Kim Minji", profilePicturePath: "minji.webp"},
     {name: "Azriel Bagas Laksamono", profilePicturePath: "azriel.webp"},
     {name: "Nur Aulia Ramadhan", profilePicturePath: "nuraul.webp"},
-    {name: "Kenzie", profilePicturePath: "kenzie.webp"}
+    {name: "Kenzie", profilePicturePath: "kenzie.webp"},
+    {name: "Muhammad Azka Ainur Rofiq", profilePicturePath: "azka.webp"}
 ]
